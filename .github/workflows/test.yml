@@ -1,0 +1,8 @@
+name: Тест RSS
+on: [workflow_dispatch]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo "✅ Работает!"
+    - run: curl https://api.telegram.org/bot${{ secrets.TELEGRAM_TOKEN }}/sendMessage?chat_id=${{ secrets.CHAT_ID }}&text=Тест%20OK
